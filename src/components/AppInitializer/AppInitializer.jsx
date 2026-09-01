@@ -13,7 +13,7 @@ export default function AppInitializer() {
 
   useEffect(() => {
     // TODO: loading local storage data
-    navigate(ROUTES.GRAMMAR);
+    navigate(ROUTES.WORDS);
   }, []);
 
   return <div className={classes.root}>Wait..</div>;

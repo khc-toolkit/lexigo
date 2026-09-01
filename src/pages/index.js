@@ -7,6 +7,7 @@ import HomePage from "./HomePage";
 import GrammarPage from "./GrammarPage";
 import SettingsPage from "./SettingsPage";
 import QuizPage from "./QuizPage";
+import WordsPage from "./WordsPage";
 
 // components
 import AppInitializer from "../components/AppInitializer";
@@ -23,6 +24,7 @@ export default function Pages() {
         <Route index element={<AppInitializer />} />
         <Route path={ROUTES.GRAMMAR} element={<GrammarPage />} />
         <Route path={ROUTES.QUIZ} element={<QuizPage />} />
+        <Route path={ROUTES.WORDS} element={<WordsPage />} />
         <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
       </Route>
     </Routes>

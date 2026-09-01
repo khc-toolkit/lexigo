@@ -2,6 +2,7 @@
 import { NotepadText } from "lucide-react";
 import { Settings } from "lucide-react";
 import { ListTodo } from "lucide-react";
+import { WholeWord } from "lucide-react";
 
 // constants
 import ROUTES from "./ROUTES";
@@ -11,6 +12,11 @@ const NAVIGATION = [
     to: ROUTES.QUIZ,
     title: "Quiz",
     icon: ListTodo,
+  },
+  {
+    to: ROUTES.WORDS,
+    title: "Words",
+    icon: WholeWord,
   },
   {
     to: ROUTES.GRAMMAR,
