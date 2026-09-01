@@ -1,1 +1,23 @@
-.root {}
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wordBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.word {
+  text-align: center;
+  font-weight: bold;
+}
+
+.translate {
+  text-align: center;
+}

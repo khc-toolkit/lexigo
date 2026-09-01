@@ -7,7 +7,7 @@ class Word {
 
 const WORDS = [
   new Word("Heavy", "Ծանր"),
-  new Word("Ill", "Հիվանդ"),
+  new Word("ill", "Հիվանդ"),
   new Word("Warm", "Տաք"),
   new Word("Coat", "Պալտո"),
   new Word("Windy", "Քամոտ"),
