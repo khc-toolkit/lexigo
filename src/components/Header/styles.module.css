@@ -6,4 +6,5 @@
   align-items: center;
   justify-content: center;
   background: #ffffff;
+  border-bottom: 1px solid var(--border);
 }
