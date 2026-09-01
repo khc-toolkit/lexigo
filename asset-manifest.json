@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lexigo/static/css/main.2196a822.css",
-    "main.js": "/lexigo/static/js/main.a59e8b6f.js",
+    "main.js": "/lexigo/static/js/main.b31cb072.js",
     "index.html": "/lexigo/index.html",
     "main.2196a822.css.map": "/lexigo/static/css/main.2196a822.css.map",
-    "main.a59e8b6f.js.map": "/lexigo/static/js/main.a59e8b6f.js.map"
+    "main.b31cb072.js.map": "/lexigo/static/js/main.b31cb072.js.map"
   },
   "entrypoints": [
     "static/css/main.2196a822.css",
-    "static/js/main.a59e8b6f.js"
+    "static/js/main.b31cb072.js"
   ]
 }
