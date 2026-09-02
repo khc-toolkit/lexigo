@@ -19,7 +19,7 @@ const WORDS = [
   new Word("Subject", "Իր"),
   new Word("Afraid", "Վախեցած"),
   new Word("Upset", "Նեղվել"),
-  new Word("Kind", "Վարի"),
+  new Word("Kind", "Բարի"),
   new Word("Meal", "Ուտելիք"),
   new Word("Exciting", "Գրավիչ"),
   new Word("Debt", "Պարտք"),
