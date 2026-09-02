@@ -7,4 +7,6 @@ const ROUTES = {
   NOT_FOUND: "*",
 };
 
+export const defaultRoute = ROUTES.WORDS;
+
 export default ROUTES;

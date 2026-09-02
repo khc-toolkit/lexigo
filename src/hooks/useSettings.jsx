@@ -1,24 +1,31 @@
-// libs
-import { useState } from "react";
+// hooks
+import useRedux from "./useRedux";
+
+// slice actions
+import {
+  setOptionAction,
+  delOptionAction,
+} from "../store/slices/settingsSlice";
 
 export default function useSettings(settingData) {
-  const { key, initValue } = settingData;
-  const [value, setValue] = useState(
-    JSON.parse(localStorage.getItem(key)) ?? initValue,
-  );
+  const { rData, dispatch } = useRedux("settingsSlice");
+  const settings = rData.settings;
 
-  const updateValue = (newValue) => {
-    localStorage.setItem(key, JSON.stringify(newValue));
-    setValue(newValue);
+  const { key } = settingData;
+  const value = settings[key];
+
+  const setValue = (value) => {
+    localStorage.setItem(key, JSON.stringify(value));
+    dispatch(setOptionAction({ key, value }));
   };
 
   const toggleValue = () => {
-    setValue((prevValue) => {
-      const newValue = !prevValue;
-      localStorage.setItem(key, JSON.stringify(newValue));
-      return newValue;
-    });
+    setValue(!value);
   };
 
-  return { value, updateValue, toggleValue };
+  const deleteOption = () => {
+    dispatch(delOptionAction({ key }));
+  };
+
+  return { value, setValue, toggleValue, deleteOption };
 }

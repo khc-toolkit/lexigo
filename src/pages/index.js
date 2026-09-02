@@ -1,5 +1,6 @@
 // libs
 import { Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 // pages
 import NotFoundPage from "./NotFoundPage";
@@ -9,11 +10,8 @@ import SettingsPage from "./SettingsPage";
 import QuizPage from "./QuizPage";
 import WordsPage from "./WordsPage";
 
-// components
-import AppInitializer from "../components/AppInitializer";
-
 // constants
-import ROUTES from "../constants/ROUTES";
+import ROUTES, { defaultRoute } from "../constants/ROUTES";
 
 export default function Pages() {
   return (
@@ -21,7 +19,7 @@ export default function Pages() {
       <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
 
       <Route path={ROUTES.HOME} element={<HomePage />}>
-        <Route index element={<AppInitializer />} />
+        <Route index element={<Navigate to={defaultRoute} />} />
         <Route path={ROUTES.GRAMMAR} element={<GrammarPage />} />
         <Route path={ROUTES.QUIZ} element={<QuizPage />} />
         <Route path={ROUTES.WORDS} element={<WordsPage />} />
