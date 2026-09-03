@@ -51,7 +51,6 @@ function ChartNeitral() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="lucide lucide-minus-icon lucide-minus"
     >
       <path d="M5 12h14" />
     </svg>
@@ -70,7 +69,6 @@ function ChartUp() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="lucide lucide-trending-up-icon lucide-trending-up"
     >
       <path d="M16 7h6v6" />
       <path d="m22 7-8.5 8.5-5-5L2 17" />
@@ -90,7 +88,6 @@ function ChartDown() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="lucide lucide-trending-down-icon lucide-trending-down"
     >
       <path d="M16 17h6v-6" />
       <path d="m22 17-8.5-8.5-5 5L2 7" />
