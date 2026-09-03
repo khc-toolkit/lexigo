@@ -7,6 +7,13 @@ class Word {
 }
 
 const WORDS = [
+  new Word(2, "Overlooked", "Բաց թողում"),
+  new Word(2, "Went out", "Դուրս գալ"),
+  new Word(2, "Refuse", "Հրաժարվել"),
+  new Word(2, "Relative", "Ազգական"),
+  new Word(2, "Gather", "Հավաքել"),
+  new Word(2, "Demand", "Պահանջարկ"),
+  new Word(2, "Fortune", "Բախտ"),
   new Word(2, "Jar", "Ապակե տարա"),
   new Word(2, "Suddenly", "Հանկարծակի"),
   new Word(2, "Seem", "Թվալ"),
