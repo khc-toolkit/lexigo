@@ -1,8 +1,8 @@
 class Word {
-  constructor(word, translate, number) {
+  constructor(number, word, translate) {
+    this.number = number;
     this.word = word;
     this.translate = translate;
-    this.number = number;
   }
 }
 
