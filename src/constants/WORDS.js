@@ -30,7 +30,7 @@ const WORDS = [
   new Word(2, "Spelling", "Ուղղագրություն"),
   new Word(2, "Get to", "Հասնել"),
   new Word(2, "Reach", "Հասնել"),
-  new Word(2, "Look to", "Փնտրել"),
+  new Word(2, "Look to", "Ուշադրություն դարձնել"),
   new Word(2, "Things", "Առարկա"),
   new Word(1, "Heavy", "Ծանր"),
   new Word(1, "ill", "Հիվանդ"),
