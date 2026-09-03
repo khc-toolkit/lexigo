@@ -16,7 +16,7 @@ const WORDS = [
   new Word(2, "Loud", "Բարձր"),
   new Word(2, "Swatter", "Ճանճասպան"),
   new Word(2, "Carefully", "Ուշադիր"),
-  new Word(2, "Approach", "Մորենալ"),
+  new Word(2, "Approach", "Մոտենալ"),
   new Word(2, "Rought", "Կոպիտ"),
   new Word(2, "Things", "Առարկա"),
   new Word(2, "Look for", "Փնտրել"),
