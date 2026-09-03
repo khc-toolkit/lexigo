@@ -9,10 +9,7 @@ const settingsSlice = createSlice({
   reducers: {
     setOptionAction(state, { payload }) {
       const { key, value } = payload;
-
-      console.log(state.settings[key]);
       state.settings[key] = value;
-      console.log(state.settings[key]);
     },
 
     delOptionAction(state, { payload }) {
