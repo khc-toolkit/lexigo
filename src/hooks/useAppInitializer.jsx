@@ -1,19 +1,16 @@
 // libs
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 // constants
 import SETTINGS from "../constants/SETTINGS";
-import { defaultRoute } from "../constants/ROUTES";
 
 // slice actions
 import { setSettingsAction } from "../store/slices/settingsSlice";
 
 export default function useAppInitializer() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const status = useRef(false);
+  const [status, setStatus] = useState(false);
 
   useEffect(() => {
     // SETTINGS
@@ -29,9 +26,9 @@ export default function useAppInitializer() {
 
     dispatch(setSettingsAction(settings));
 
-    status.current = true;
-    navigate(defaultRoute);
+    // end initialization
+    setStatus(true);
   }, []);
 
-  return [status.current];
+  return [status];
 }
