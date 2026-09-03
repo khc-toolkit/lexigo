@@ -12,7 +12,7 @@ export default function useAppInitializer() {
   const dispatch = useDispatch();
   const [status, setStatus] = useState(false);
 
-  useEffect(() => {
+  const initApp = async () => {
     // SETTINGS
     const settings = {};
 
@@ -28,6 +28,10 @@ export default function useAppInitializer() {
 
     // end initialization
     setStatus(true);
+  };
+
+  useEffect(() => {
+    initApp();
   }, []);
 
   return [status];
