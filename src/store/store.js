@@ -2,7 +2,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // slices
-import settingsSlice from "../store/slices/settingsSlice";
+import settingsSlice from "./slices/settingsSlice";
 
 const store = configureStore({
   reducer: {

@@ -1,6 +1,9 @@
 // libs
 import { useEffect, useState } from "react";
 
+// hooks
+import useWordsProgress from "../../hooks/useWordsProgress";
+
 // constants
 import WORDS from "../../constants/WORDS";
 
@@ -8,14 +11,14 @@ import WORDS from "../../constants/WORDS";
 import classes from "./styles.module.css";
 
 export default function QuizPage() {
-  const [words, setWords] = useState(
-    shuffle(JSON.parse(JSON.stringify(WORDS))),
-  );
-
+  const [words] = useState(shuffle(JSON.parse(JSON.stringify(WORDS))));
   const [wInd, setWInd] = useState(0);
   const [isShowRightVersion, setIsShowRightVersion] = useState(false);
   const [rightTranslates, setRightTranslates] = useState([]);
   const [selectedVariant, setSelectedVariant] = useState(-1);
+  const { wordsProgress, initWords, progress, regress } = useWordsProgress();
+
+  const currentWordData = words[wInd];
 
   const updateRightTranslates = () => {
     const currentWordData = words[wInd];
@@ -43,20 +46,27 @@ export default function QuizPage() {
     // show right variant
     if (!isShowRightVersion) {
       setIsShowRightVersion(true);
-      if (!isValid) {
+      let currentWordInd = WORDS.findIndex(
+        (item) => item.id === currentWordData.id,
+      );
+
+      if (isValid) {
+        progress(currentWordInd);
+      } else {
+        regress(currentWordInd);
         setSelectedVariant(ind);
       }
-      return;
+    } else {
+      // next word
+      nextWord();
+      setIsShowRightVersion(false);
+      setSelectedVariant(-1);
     }
-
-    // next word
-    nextWord();
-    setIsShowRightVersion(false);
-    setSelectedVariant(-1);
   };
 
   useEffect(() => {
     updateRightTranslates();
+    initWords();
   }, []);
 
   useEffect(() => {
@@ -64,7 +74,8 @@ export default function QuizPage() {
     setIsShowRightVersion(false);
   }, [wInd]);
 
-  const currentWordData = words[wInd];
+  const currentWordProgress =
+    wordsProgress[WORDS.findIndex((item) => item.id === currentWordData.id)];
 
   return (
     <div className={classes.root}>
