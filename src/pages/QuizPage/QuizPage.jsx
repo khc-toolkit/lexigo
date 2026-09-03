@@ -46,14 +46,11 @@ export default function QuizPage() {
     // show right variant
     if (!isShowRightVersion) {
       setIsShowRightVersion(true);
-      let currentWordInd = WORDS.findIndex(
-        (item) => item.id === currentWordData.id,
-      );
 
       if (isValid) {
-        progress(currentWordInd);
+        progress(currentWordData.id);
       } else {
-        regress(currentWordInd);
+        regress(currentWordData.id);
         setSelectedVariant(ind);
       }
     } else {
@@ -74,8 +71,8 @@ export default function QuizPage() {
     setIsShowRightVersion(false);
   }, [wInd]);
 
-  const currentWordProgress =
-    wordsProgress[WORDS.findIndex((item) => item.id === currentWordData.id)];
+  // const currentWordProgress =
+  //   wordsProgress[WORDS.findIndex((item) => item.id === currentWordData.id)];
 
   return (
     <div className={classes.root}>
