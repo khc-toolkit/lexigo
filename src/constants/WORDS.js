@@ -7,6 +7,8 @@ class Word {
 }
 
 const WORDS = [
+  new Word(2, "Quarrel", "Վեճ"),
+  new Word(2, "Gather", "Հավաքել"),
   new Word(2, "Overlooked", "Բաց թողում"),
   new Word(2, "Went out", "Դուրս գալ"),
   new Word(2, "Refuse", "Հրաժարվել"),
