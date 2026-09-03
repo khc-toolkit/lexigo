@@ -12,7 +12,7 @@ export default function useWordsProgress() {
       JSON.parse(localStorage.getItem("wordsProgress")) ??
       new Array(WORDS.length).fill(0);
 
-    if (progress.length !== WORDS.length) {
+    if (progress.length < WORDS.length) {
       const emptySlots = Math.abs(WORDS.length - progress.length);
       const arr = new Array(emptySlots).fill(0);
       progress = [...progress, ...arr];

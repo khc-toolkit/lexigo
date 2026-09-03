@@ -1,5 +1,12 @@
+// libs
+import { useEffect } from "react";
+
+// components
+import WordsPageWord from "../../components/WordsPageWord";
+
 // hooks
 import useSettings from "../../hooks/useSettings";
+import useWordsProgress from "../../hooks/useWordsProgress";
 
 // constants
 import WORDS from "../../constants/WORDS";
@@ -12,25 +19,20 @@ export default function WordsPage() {
   const { value: isShowTranslates, toggleValue: toggleShowTranslates } =
     useSettings(SETTINGS.showTranslates);
 
+  const { wordsProgress, initWords } = useWordsProgress();
+
+  useEffect(initWords, []);
+
   return (
     <div className={classes.root}>
       <div className={classes.words}>
         {WORDS.map((wordData, ind) => (
-          <div
+          <WordsPageWord
             key={ind}
-            className={`${classes.wordBox} ${!isShowTranslates && classes.wordBoxHideTranslate}`}
-          >
-            <p
-              className={`${classes.word} ${!isShowTranslates && classes.onlyWord}`}
-            >
-              {wordData.word}
-            </p>
-            <p
-              className={`${classes.translate} ${!isShowTranslates && classes.hideTranslate}`}
-            >
-              {wordData.translate}
-            </p>
-          </div>
+            data={wordData}
+            progress={wordsProgress[wordData.id]}
+            isShowTranslates={isShowTranslates}
+          />
         ))}
       </div>
 

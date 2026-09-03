@@ -1,0 +1,56 @@
+.wordBox {
+  position: relative;
+  transition: 0.5s;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.progress {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.progressNeitral {
+  color: gray;
+}
+
+.progressUp {
+  color: #33b833;
+}
+
+.progressDown {
+  color: #e05b5b;
+}
+
+.wordBoxHideTranslate {
+}
+
+.word,
+.translate {
+  text-align: center;
+  transition: 0.5s;
+  width: 100%;
+}
+
+.word {
+  font-weight: bold;
+}
+
+.translate {
+}
+
+.onlyWord {
+  font-weight: normal;
+  translate: 50%;
+}
+
+.hideTranslate {
+  overflow-x: hidden;
+  translate: -50%;
+  opacity: 0;
+}

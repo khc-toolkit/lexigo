@@ -7,44 +7,6 @@
   gap: 5px;
 }
 
-.wordBox {
-  transition: 0.5s;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: #ffffff;
-}
-
-.wordBoxHideTranslate {
-}
-
-.word,
-.translate {
-  text-align: center;
-  transition: 0.5s;
-  width: 100%;
-}
-
-.word {
-  font-weight: bold;
-}
-
-.translate {
-}
-
-.onlyWord {
-  font-weight: normal;
-  translate: 50%;
-}
-
-.hideTranslate {
-  overflow-x: hidden;
-  translate: -50%;
-  opacity: 0;
-}
-
 .toggleButtonBox {
   margin-top: 10px;
   position: sticky;
