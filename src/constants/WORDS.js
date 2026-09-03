@@ -7,6 +7,23 @@ class Word {
 }
 
 const WORDS = [
+  new Word(2, "Jar", "Ապակե տարա"),
+  new Word(2, "Suddenly", "Հանկարծակի"),
+  new Word(2, "Seem", "Թվալ"),
+  new Word(2, "Worse", "Ավելի վատ"),
+  new Word(2, "Shout", "Գոռալ"),
+  new Word(2, "Unpleasant", "Տհաճ"),
+  new Word(2, "Loud", "Բարձր"),
+  new Word(2, "Swatter", "Ճանճասպան"),
+  new Word(2, "Carefully", "Ուշադիր"),
+  new Word(2, "Approach", "Մորենալ"),
+  new Word(2, "Rought", "Կոպիտ"),
+  new Word(2, "Things", "Առարկա"),
+  new Word(2, "Look for", "Փնտրել"),
+  new Word(2, "Get to", "Հասնել"),
+  new Word(2, "Spelling", "Ուղղագրություն"),
+  new Word(2, "Going to", "Պատրաստվել անել"),
+  new Word(2, "Interapting", "Ընդհատել"),
   new Word(2, "Nurse", "Բույժքույր"),
   new Word(2, "Interapting", "Ընդհատել"),
   new Word(2, "Going to", "Պատրաստվել"),
