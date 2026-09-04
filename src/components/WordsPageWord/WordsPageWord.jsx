@@ -1,4 +1,7 @@
-// libs
+// components
+import ChartNeitral from "../ChartNeitral";
+import ChartDown from "../ChartDown";
+import ChartUp from "../ChartUp";
 
 // styles
 import classes from "./styles.module.css";
@@ -36,61 +39,5 @@ export default function WordsPageWord({ data, progress, isShowTranslates }) {
         {translate}
       </p>
     </div>
-  );
-}
-
-function ChartNeitral() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d="M5 12h14" />
-    </svg>
-  );
-}
-
-function ChartUp() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d="M16 7h6v6" />
-      <path d="m22 7-8.5 8.5-5-5L2 17" />
-    </svg>
-  );
-}
-
-function ChartDown() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d="M16 17h6v-6" />
-      <path d="m22 17-8.5-8.5-5 5L2 7" />
-    </svg>
   );
 }
