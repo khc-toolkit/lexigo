@@ -67,7 +67,7 @@ const WORDS = [
   new Word(1, "Expensive", "Թանկ", 33),
   new Word(1, "Terrible", "Սարսափելի", 32),
   new Word(1, "Sick", "Հիվանդ", 31),
-  new Word(1, "Yard", "Տարածք", 30),
+  new Word(1, "Yard", "Բակ", 30),
   new Word(1, "Living room", "Հյուրասենյակ", 29),
   new Word(1, "Noisy", "Աղմուկ", 28),
   new Word(1, "Sink", "Լվացարան", 27),
