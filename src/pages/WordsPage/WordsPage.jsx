@@ -43,7 +43,6 @@ export default function WordsPage() {
   useEffect(initWords, []);
 
   const progresses = calculateProgresses();
-  console.log(progresses);
 
   return (
     <div className={classes.root}>
