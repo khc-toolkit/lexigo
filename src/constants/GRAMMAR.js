@@ -1,13 +1,13 @@
-class Grammar {
-  static types = {
-    toBe: "to be",
-    header: "header",
-    sentenseExample: "sentense example",
-    hintWords: "hints words",
-    shortVersion: "short version",
-    rule: "rule",
-  };
+const grammarTypes = {
+  toBe: "to be",
+  header: "header",
+  sentenseExample: "sentense example",
+  hintWords: "hints words",
+  shortVersion: "short version",
+  rule: "rule",
+};
 
+class Grammar {
   constructor() {
     this.data = null;
     this.type = null;
@@ -19,37 +19,37 @@ class Grammar {
   }
 
   header(text) {
-    this.type = Grammar.types.header;
+    this.type = grammarTypes.header;
     this.data = text;
     return this;
   }
 
   toBe(text) {
-    this.type = Grammar.types.toBe;
+    this.type = grammarTypes.toBe;
     this.data = text;
     return this;
   }
 
   sentenseExample(singular, plural) {
-    this.type = Grammar.types.sentenseExample;
+    this.type = grammarTypes.sentenseExample;
     this.data = { singular, plural };
     return this;
   }
 
   hintWords(...words) {
-    this.type = Grammar.types.hintWords;
+    this.type = grammarTypes.hintWords;
     this.data = words;
     return this;
   }
 
   shortVersion(data) {
-    this.type = Grammar.types.shortVersion;
+    this.type = grammarTypes.shortVersion;
     this.data = data;
     return this;
   }
 
   rule(data) {
-    this.type = Grammar.types.rule;
+    this.type = grammarTypes.rule;
     this.data = data;
     return this;
   }
@@ -60,7 +60,21 @@ const GRAMMAR = [
     title: "Present Simple",
     data: [
       new Grammar().toBe("am/is/are"),
-      new Grammar().hintWords("now", "at the moment"),
+      new Grammar().hintWords(
+        "now",
+        "at the moment",
+        "always",
+        "usually",
+        "sometimes",
+        "rarely",
+        "never",
+        "every day/week/month/year",
+        "in the morning",
+      ),
+      new Grammar().sentenseExample(
+        ["I am", "You are", "He is", "She is", "It is"],
+        ["We are", "You are", "They are"],
+      ),
       new Grammar().shortVersion([
         ["I am", "I'm"],
         ["You are", "You're"],
@@ -71,10 +85,6 @@ const GRAMMAR = [
         ["You are", "You're"],
         ["They are", "They're"],
       ]),
-      new Grammar().sentenseExample(
-        ["I am", "You are", "He is", "She is", "It is"],
-        ["We are", "You are", "They are"],
-      ),
 
       new Grammar().header("?? Question ??"),
       new Grammar().rule(`"I" ու "am" տեղերով փոխվում են - "Am I"`),
@@ -85,15 +95,21 @@ const GRAMMAR = [
 
       new Grammar().header("!! Negative !!"),
       new Grammar().rule("am/is/are + not"),
+      new Grammar().sentenseExample(
+        [
+          "I am not !",
+          "You are not !",
+          "He is not !",
+          "She is not !",
+          "It is not !",
+        ],
+        ["We are not !", "You are not !", "They are not !"],
+      ),
       new Grammar().shortVersion([
         ["I am not", "I'm not"],
         ["are not", "aren't"],
         ["is not", "isn't"],
       ]),
-      new Grammar().sentenseExample(
-        ["I am not", "You are not", "He is not", "She is not", "It is not"],
-        ["We are not", "You are not", "They are not"],
-      ),
     ],
   },
   {
@@ -111,4 +127,4 @@ const GRAMMAR = [
 ];
 
 export default GRAMMAR;
-export const { types: grammarTypes } = GRAMMAR;
+export { grammarTypes };
