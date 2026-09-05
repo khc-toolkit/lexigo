@@ -41,7 +41,7 @@ export default function GrammarPage() {
 
           <div className={classes.items}>
             {activeTense.data.map((tenseData, ind) => (
-              <TenseItem data={tenseData} key={ind} />
+              <TenseItem tenseData={tenseData} key={ind} />
             ))}
           </div>
 
