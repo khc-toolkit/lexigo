@@ -43,11 +43,7 @@ export default function QuizPage() {
     setTab(TABS.quiz);
   };
 
-  useEffect(() => {
-    initWordsProgress();
-  }, []);
-
-  useEffect(() => {
+  const calculateWordsCategories = () => {
     if (wordsProgress.length === 0) return;
 
     const badStudied = [];
@@ -75,6 +71,18 @@ export default function QuizPage() {
     }
 
     setWordsCategories({ classes: classes.reverse(), badStudied, newWords });
+  };
+
+  const goBackToOptions = () => {
+    initWordsProgress();
+  };
+
+  useEffect(() => {
+    initWordsProgress();
+  }, []);
+
+  useEffect(() => {
+    calculateWordsCategories();
     setTab(TABS.options);
   }, [wordsProgress]);
 
@@ -135,16 +143,10 @@ export default function QuizPage() {
 
       {isQuizTab && (
         <div>
-          <button
-            className={classes.backButton}
-            onClick={() => setTab(TABS.options)}
-          >
+          <button className={classes.backButton} onClick={goBackToOptions}>
             Վերադառնալ
           </button>
-          <QuizWord
-            inputWords={quizWords}
-            setOptionsTab={() => setTab(TABS.options)}
-          />
+          <QuizWord inputWords={quizWords} goBackToOptions={goBackToOptions} />
         </div>
       )}
     </div>

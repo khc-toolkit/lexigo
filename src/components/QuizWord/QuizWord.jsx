@@ -4,7 +4,7 @@ import useQuiz from "../../hooks/useQuiz";
 // styles
 import classes from "./styles.module.css";
 
-export default function QuizWord({ inputWords, setOptionsTab }) {
+export default function QuizWord({ inputWords, goBackToOptions }) {
   const {
     wInd,
     words,
@@ -37,7 +37,7 @@ export default function QuizWord({ inputWords, setOptionsTab }) {
             </svg>
           </div>
 
-          <button className={classes.endBackButton} onClick={setOptionsTab}>
+          <button className={classes.endBackButton} onClick={goBackToOptions}>
             Վերադառնալ
           </button>
         </div>
