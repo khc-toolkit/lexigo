@@ -35,8 +35,9 @@ export default function GrammarPage() {
           >
             Վերադառնալ
           </button>
-          <div>
-            <h2>{activeTense.title}</h2>
+
+          <div className={classes.headerTextContainer}>
+            <h2 className={classes.headerText}>{activeTense.title}</h2>
           </div>
 
           <div className={classes.items}>
