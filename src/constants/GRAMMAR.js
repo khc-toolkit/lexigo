@@ -87,7 +87,7 @@ const GRAMMAR = [
       ]),
 
       new Grammar().header("?? Question ??"),
-      new Grammar().rule(`"I" ու "am" տեղերով փոխվում են - "Am I"`),
+      new Grammar().rule(`"I am" - "Am I"`),
       new Grammar().sentenseExample(
         ["Am I ?", "Are you ? ", "Is he ?", "Is she ?", "Is it ?"],
         ["Are we ?", "Are you ?", "Are they ?"],
@@ -114,7 +114,46 @@ const GRAMMAR = [
   },
   {
     title: "Past Simple",
-    data: [],
+    data: [
+      new Grammar().toBe("was/where"),
+      new Grammar().hintWords(
+        "yesterday",
+        "last week/night/month/year",
+        "... ago",
+        "in *year*",
+        "then",
+        "the other day",
+      ),
+
+      new Grammar().sentenseExample(
+        ["I was", "You where", "He was", "She was", "It was"],
+        ["We were", "You were", "They were"],
+      ),
+
+      new Grammar().header("?? Question ??"),
+      new Grammar().rule(`"I was" - "Was I"`),
+      new Grammar().sentenseExample(
+        ["Was I ?", " Where you ?", "Was he ?", "Was she ?", "Was it ?"],
+        ["Where we ?", "Where you ?", "Where they ?"],
+      ),
+
+      new Grammar().header("!! Negative !!"),
+      new Grammar().rule("was/were + not"),
+      new Grammar().sentenseExample(
+        [
+          "I was not !",
+          "You were not !",
+          "He was not !",
+          "She was not !",
+          "It was not !",
+        ],
+        ["We were not !", "You were not !", "They were not !"],
+      ),
+      new Grammar().shortVersion([
+        ["was not", "wasn't"],
+        ["were not", "weren't"],
+      ]),
+    ],
   },
   {
     title: "Future Simple",
