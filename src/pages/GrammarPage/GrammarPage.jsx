@@ -22,7 +22,7 @@ export default function GrammarPage() {
     setActiveTenseInd((prev) => prev + 1);
   };
 
-  const isDisabledPrev = activeTenseInd - 1 === 0;
+  const isDisabledPrev = activeTenseInd - 1 === -1;
   const isDisabledNext = activeTenseInd + 1 === GRAMMAR.length;
 
   return (
