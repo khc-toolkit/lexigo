@@ -8,32 +8,25 @@ class Word {
 }
 
 const WORDS = [
-  new Word(2, "Quarrel", "Վեճ", 89),
-  new Word(2, "Gather", "Հավաքել", 88),
-  new Word(2, "Overlooked", "Բաց թողում", 87),
-  new Word(2, "Went out", "Դուրս գալ", 86),
-  new Word(2, "Refuse", "Հրաժարվել", 85),
-  new Word(2, "Relative", "Ազգական", 84),
-  new Word(2, "Gather", "Հավաքել", 83),
-  new Word(2, "Demand", "Պահանջարկ", 82),
-  new Word(2, "Fortune", "Բախտ", 81),
-  new Word(2, "Jar", "Ապակե տարա", 80),
-  new Word(2, "Suddenly", "Հանկարծակի", 79),
-  new Word(2, "Seem", "Թվալ", 78),
-  new Word(2, "Worse", "Ավելի վատ", 77),
-  new Word(2, "Shout", "Գոռալ", 76),
-  new Word(2, "Unpleasant", "Տհաճ", 75),
-  new Word(2, "Loud", "Բարձր", 74),
-  new Word(2, "Swatter", "Ճանճասպան", 73),
-  new Word(2, "Carefully", "Ուշադիր", 72),
-  new Word(2, "Approach", "Մոտենալ", 71),
-  new Word(2, "Rought", "Կոպիտ", 70),
-  new Word(2, "Things", "Առարկա", 69),
-  new Word(2, "Look for", "Փնտրել", 68),
-  new Word(2, "Get to", "Հասնել", 67),
-  new Word(2, "Spelling", "Ուղղագրություն", 66),
-  new Word(2, "Going to", "Պատրաստվել անել", 65),
-  new Word(2, "Interapting", "Ընդհատել", 64),
+  new Word(2, "Quarrel", "Վեճ", 82),
+  new Word(2, "Overlooked", "Բաց թողում", 81),
+  new Word(2, "Went out", "Դուրս գալ", 80),
+  new Word(2, "Refuse", "Հրաժարվել", 79),
+  new Word(2, "Relative", "Ազգական", 78),
+  new Word(2, "Gather", "Հավաքել", 77),
+  new Word(2, "Demand", "Պահանջարկ", 76),
+  new Word(2, "Fortune", "Բախտ", 75),
+  new Word(2, "Jar", "Ապակե տարա", 74),
+  new Word(2, "Suddenly", "Հանկարծակի", 73),
+  new Word(2, "Seem", "Թվալ", 72),
+  new Word(2, "Worse", "Ավելի վատ", 71),
+  new Word(2, "Shout", "Գոռալ", 70),
+  new Word(2, "Unpleasant", "Տհաճ", 69),
+  new Word(2, "Loud", "Բարձր", 68),
+  new Word(2, "Swatter", "Ճանճասպան", 67),
+  new Word(2, "Carefully", "Ուշադիր", 66),
+  new Word(2, "Approach", "Մոտենալ", 65),
+  new Word(2, "Rought", "Կոպիտ", 64),
   new Word(2, "Nurse", "Բույժքույր", 63),
   new Word(2, "Interapting", "Ընդհատել", 62),
   new Word(2, "Going to", "Պատրաստվել", 61),
@@ -99,5 +92,22 @@ const WORDS = [
   new Word(1, "Noon", "Կեսօր", 1),
   new Word(1, "Cage", "Վանդակ", 0),
 ];
+
+// const repeatedWords = new Set();
+// let id = WORDS[0].id;
+
+// for (let i = 1; i < WORDS.length; ++i) {
+//   // findind dublicates
+//   if (repeatedWords.has(WORDS[i].word)) {
+//     console.log(WORDS[i].word);
+//   }
+//   repeatedWords.add(WORDS[i].word);
+
+//   // findind not forward id's
+//   if (Math.abs(id - WORDS[i].id) > 1) {
+//     console.log(id);
+//   }
+//   id = WORDS[i].id;
+// }
 
 export default WORDS;

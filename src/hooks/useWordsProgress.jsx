@@ -7,7 +7,7 @@ import WORDS from "../constants/WORDS";
 export default function useWordsProgress() {
   const [wordsProgress, setWordsProgress] = useState([]);
 
-  const initWords = () => {
+  const initWordsProgress = () => {
     let progress =
       JSON.parse(localStorage.getItem("wordsProgress")) ??
       new Array(WORDS.length).fill(0);
@@ -27,7 +27,7 @@ export default function useWordsProgress() {
 
   const regress = (ind) => {
     setWordsProgress((prev) => {
-      prev[ind] -= 1;
+      prev[ind] = -1;
       save();
       return prev;
     });
@@ -35,11 +35,21 @@ export default function useWordsProgress() {
 
   const progress = (ind) => {
     setWordsProgress((prev) => {
-      prev[ind] += 1;
+      prev[ind] = 1;
       save();
       return prev;
     });
   };
 
-  return { wordsProgress, initWords, regress, progress };
+  const findProgressByWordId = (wordId) => {
+    return wordsProgress[wordId];
+  };
+
+  return {
+    wordsProgress,
+    regress,
+    progress,
+    initWordsProgress,
+    findProgressByWordId,
+  };
 }

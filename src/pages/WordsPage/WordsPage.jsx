@@ -22,7 +22,7 @@ export default function WordsPage() {
   const { value: isShowTranslates, toggleValue: toggleShowTranslates } =
     useSettings(SETTINGS.showTranslates);
 
-  const { wordsProgress, initWords } = useWordsProgress();
+  const { wordsProgress, initWordsProgress } = useWordsProgress();
 
   const calculateProgresses = () => {
     const progresses = [0, 0, 0];
@@ -40,7 +40,7 @@ export default function WordsPage() {
     return progresses;
   };
 
-  useEffect(initWords, []);
+  useEffect(initWordsProgress, []);
 
   const progresses = calculateProgresses();
 
