@@ -1,1 +1,55 @@
-.root {}
+.root {
+}
+
+.headerTextContainer {
+  padding: 10px 5px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+}
+
+.headerText {
+  text-align: center;
+}
+
+.backButton {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  gap: 5px;
+}
+
+.navigationButtons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.navigationButton {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.navigationButton:disabled {
+  color: gray;
+}
+
+.grammars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grammarButton {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
