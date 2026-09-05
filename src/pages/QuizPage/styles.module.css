@@ -1,44 +1,50 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: calc(var(--mainH) - 20px);
 }
 
-.wordBox {
+.backButton {
+  height: 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.classes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.categoryButton {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   gap: 5px;
-  height: 300px;
+
+  span {
+    opacity: 0.6;
+    font-size: 0.8em;
+  }
 }
 
-.word {
-  text-align: center;
-  font-size: 30px;
+.badWordsButton {
+  background: #ffcccc;
+  color: #9e1a1a;
+  border-color: #d47272;
 }
 
-.variants {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-}
-
-.variant {
-  border-radius: 10px;
-  outline: none;
-  border: 1px solid var(--border);
-  font-size: 16px;
-  padding: 20px 10px;
-}
-
-.invalidVersion {
-  background: #ffcdcd;
-  color: #350505;
-}
-
-.rightVariant {
-  background: #cdffcd;
-  color: #032b03;
+.newWordsButton {
+  background: #ffdacc;
+  color: #9e441a;
+  border-color: #d48e72;
 }

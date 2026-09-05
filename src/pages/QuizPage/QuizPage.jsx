@@ -1,8 +1,14 @@
 // libs
 import { useEffect, useState } from "react";
 
+// components
+import QuizWord from "../../components/QuizWord";
+
 // hooks
 import useWordsProgress from "../../hooks/useWordsProgress";
+
+// utils
+import shuffle from "../../utils/shuffle";
 
 // constants
 import WORDS from "../../constants/WORDS";
@@ -10,110 +16,137 @@ import WORDS from "../../constants/WORDS";
 // styles
 import classes from "./styles.module.css";
 
+const TABS = {
+  initialization: "initialization",
+  options: "options",
+  quiz: "quiz",
+};
+
 export default function QuizPage() {
-  const [words] = useState(shuffle(JSON.parse(JSON.stringify(WORDS))));
-  const [wInd, setWInd] = useState(0);
-  const [isShowRightVersion, setIsShowRightVersion] = useState(false);
-  const [rightTranslates, setRightTranslates] = useState([]);
-  const [selectedVariant, setSelectedVariant] = useState(-1);
-  const { wordsProgress, initWords, progress, regress } = useWordsProgress();
+  const [tab, setTab] = useState(TABS.initialization);
+  const [isShuffle, setIsShuffle] = useState(false);
+  const [quizWords, setQuizWords] = useState([]);
+  const { wordsProgress, initWordsProgress, findProgressByWordId } =
+    useWordsProgress();
+  const [wordsCategories, setWordsCategories] = useState({
+    badStudied: [],
+    classes: [],
+    newWords: [],
+  });
 
-  const currentWordData = words[wInd];
+  const isOptionTab = tab === TABS.options;
+  const isQuizTab = tab === TABS.quiz;
 
-  const updateRightTranslates = () => {
-    const currentWordData = words[wInd];
-
-    let result = new Set();
-    result.add(currentWordData.translate);
-    while (result.size < 8) {
-      const randomWordInd = Math.floor(Math.random() * words.length);
-      result.add(words[randomWordInd].translate);
-    }
-
-    setRightTranslates(shuffle(Array.from(result)));
-  };
-
-  const nextWord = () => {
-    let nextInd = wInd + 1;
-    if (nextInd >= words.length) {
-      nextInd = 0;
-    }
-
-    setWInd(nextInd);
-  };
-
-  const selectVariant = (ind, isValid) => {
-    // show right variant
-    if (!isShowRightVersion) {
-      setIsShowRightVersion(true);
-
-      if (isValid) {
-        progress(currentWordData.id);
-      } else {
-        regress(currentWordData.id);
-        setSelectedVariant(ind);
-      }
-    } else {
-      // next word
-      nextWord();
-      setIsShowRightVersion(false);
-      setSelectedVariant(-1);
-    }
+  const selectCategory = (categoryWords) => {
+    const result = isShuffle ? shuffle(categoryWords) : categoryWords;
+    setQuizWords(result);
+    setTab(TABS.quiz);
   };
 
   useEffect(() => {
-    updateRightTranslates();
-    initWords();
+    initWordsProgress();
   }, []);
 
   useEffect(() => {
-    updateRightTranslates();
-    setIsShowRightVersion(false);
-  }, [wInd]);
+    if (wordsProgress.length === 0) return;
 
-  // const currentWordProgress =
-  //   wordsProgress[WORDS.findIndex((item) => item.id === currentWordData.id)];
+    const badStudied = [];
+    const classes = [];
+    const newWords = [];
+
+    for (let i = 0; i < WORDS.length; ++i) {
+      const word = WORDS[i];
+      const wordProgress = findProgressByWordId(word.id);
+      const wordClass = word.number - 1;
+
+      // bad studies words
+      if (wordProgress < 0) {
+        badStudied.push(word);
+      }
+
+      // new words
+      if (wordProgress === 0) {
+        newWords.push(word);
+      }
+
+      // classes
+      if (!classes[wordClass]) classes[wordClass] = [];
+      classes[wordClass].push(word);
+    }
+
+    setWordsCategories({ classes: classes.reverse(), badStudied, newWords });
+    setTab(TABS.options);
+  }, [wordsProgress]);
 
   return (
     <div className={classes.root}>
-      <div className={classes.wordBox}>
-        <p className={classes.word}>{currentWordData.word}</p>
-      </div>
+      {isOptionTab && (
+        <div className={classes.options}>
+          <label htmlFor="shuffle">
+            <input
+              type="checkbox"
+              value={isShuffle}
+              onChange={(e) => setIsShuffle(e.target.checked)}
+              name="shuffle"
+              id="shuffle"
+            />
+            Խառնել բառերը
+          </label>
 
-      <div className={classes.variants}>
-        {rightTranslates.map((translate, ind) => (
+          {wordsCategories.badStudied.length > 0 && (
+            <button
+              onClick={() => selectCategory(wordsCategories.badStudied)}
+              className={`${classes.categoryButton} ${classes.badWordsButton}`}
+            >
+              Ուղղել սխալները <span>({wordsCategories.badStudied.length})</span>
+            </button>
+          )}
+
+          {wordsCategories.newWords.length > 0 && (
+            <button
+              onClick={() => selectCategory(wordsCategories.newWords)}
+              className={`${classes.categoryButton} ${classes.newWordsButton}`}
+            >
+              Նոր բառեր <span>({wordsCategories.newWords.length})</span>
+            </button>
+          )}
+
           <button
-            className={`${classes.variant} ${selectedVariant === ind && classes.invalidVersion}  ${isShowRightVersion && translate === currentWordData.translate && classes.rightVariant}`}
-            onClick={() =>
-              selectVariant(ind, translate === currentWordData.translate)
-            }
-            key={ind}
+            onClick={() => selectCategory(WORDS)}
+            className={classes.categoryButton}
           >
-            {translate}
+            Բոլոր բառերը <span>({WORDS.length})</span>
           </button>
-        ))}
-      </div>
+
+          <div className={classes.classes}>
+            {wordsCategories.classes.map((_wordData, ind) => (
+              <button
+                onClick={() => selectCategory(wordsCategories.classes[ind])}
+                className={classes.categoryButton}
+                key={ind}
+              >
+                Դաս {wordsCategories.classes.length - ind}
+                <span>({wordsCategories.classes[ind].length})</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {isQuizTab && (
+        <div>
+          <button
+            className={classes.backButton}
+            onClick={() => setTab(TABS.options)}
+          >
+            Վերադառնալ
+          </button>
+          <QuizWord
+            inputWords={quizWords}
+            setOptionsTab={() => setTab(TABS.options)}
+          />
+        </div>
+      )}
     </div>
   );
-}
-
-function shuffle(arr) {
-  const array = [...arr];
-
-  let currentIndex = array.length;
-
-  // While there remain elements to shuffle...
-  while (currentIndex !== 0) {
-    // Pick a remaining element...
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
 }
