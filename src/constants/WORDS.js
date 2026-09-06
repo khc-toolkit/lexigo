@@ -8,6 +8,7 @@ class Word {
 }
 
 const WORDS = [
+  new Word(2, "Close to", "Մոտիկ", 83),
   new Word(2, "Quarrel", "Վեճ", 82),
   new Word(2, "Overlooked", "Բաց թողում", 81),
   new Word(2, "Went out", "Դուրս գալ", 80),
