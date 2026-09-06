@@ -133,7 +133,7 @@
     }
 
     .ruleItem + .ruleItem {
-      padding-left: 15px;
+      padding-left: 10px;
       margin-top: 8px;
       color: #252525;
     }
