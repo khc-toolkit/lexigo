@@ -89,21 +89,21 @@ const GRAMMAR = [
       new Grammar().header("?? Question ??"),
       new Grammar().rule(`"I am" - "Am I"`),
       new Grammar().sentenseExample(
-        ["Am I ?", "Are you ? ", "Is he ?", "Is she ?", "Is it ?"],
-        ["Are we ?", "Are you ?", "Are they ?"],
+        ["Am I?", "Are you ? ", "Is he?", "Is she?", "Is it?"],
+        ["Are we?", "Are you?", "Are they?"],
       ),
 
       new Grammar().header("!! Negative !!"),
       new Grammar().rule("am/is/are + not"),
       new Grammar().sentenseExample(
         [
-          "I am not !",
-          "You are not !",
-          "He is not !",
-          "She is not !",
-          "It is not !",
+          "I am not!",
+          "You are not!",
+          "He is not!",
+          "She is not!",
+          "It is not!",
         ],
-        ["We are not !", "You are not !", "They are not !"],
+        ["We are not!", "You are not!", "They are not!"],
       ),
       new Grammar().shortVersion([
         ["I am not", "I'm not"],
@@ -133,21 +133,21 @@ const GRAMMAR = [
       new Grammar().header("?? Question ??"),
       new Grammar().rule(`"I was" - "Was I"`),
       new Grammar().sentenseExample(
-        ["Was I ?", " Where you ?", "Was he ?", "Was she ?", "Was it ?"],
-        ["Where we ?", "Where you ?", "Where they ?"],
+        ["Was I?", " Where you?", "Was he?", "Was she?", "Was it?"],
+        ["Where we?", "Where you?", "Where they?"],
       ),
 
       new Grammar().header("!! Negative !!"),
       new Grammar().rule("was/were + not"),
       new Grammar().sentenseExample(
         [
-          "I was not !",
-          "You were not !",
-          "He was not !",
-          "She was not !",
-          "It was not !",
+          "I was not!",
+          "You were not!",
+          "He was not!",
+          "She was not!",
+          "It was not!",
         ],
-        ["We were not !", "You were not !", "They were not !"],
+        ["We were not!", "You were not!", "They were not!"],
       ),
       new Grammar().shortVersion([
         ["was not", "wasn't"],
@@ -157,7 +157,57 @@ const GRAMMAR = [
   },
   {
     title: "Future Simple",
-    data: [],
+    data: [
+      new Grammar().toBe("shall/will"),
+      new Grammar().hintWords(
+        "tomorrow",
+        "tonight",
+        "later",
+        "soon",
+        "next week/month/year",
+        "in 2 days",
+        "one day",
+      ),
+      new Grammar().sentenseExample(
+        [
+          "I shall/will be",
+          "You will be",
+          "He will be",
+          "She will be",
+          "It will be",
+        ],
+        ["We shall/will be", "You will be", "They will be"],
+      ),
+      new Grammar().header("?? Question ??"),
+      new Grammar().rule(`"I will be" - "Will I be?"`),
+      new Grammar().sentenseExample(
+        [
+          "Will I be?",
+          "Will you be?",
+          "Will he be?",
+          "Will she be?",
+          "Will it be?",
+        ],
+        ["Will we be?", "Will you be?", "Will they be?"],
+      ),
+
+      new Grammar().header("!! Negative !!"),
+      new Grammar().rule("will + not + be"),
+      new Grammar().sentenseExample(
+        [
+          "I will not be!",
+          "You will not be!",
+          "He will not be!",
+          "She will not be!",
+          "It will not be!",
+        ],
+        ["We will not be!", "You will not be!", "They will not be!"],
+      ),
+      new Grammar().shortVersion([
+        ["will not be", "won't be"],
+        ["shall not be", "shan't be"],
+      ]),
+    ],
   },
   {
     title: "Present Continuous Tense",
