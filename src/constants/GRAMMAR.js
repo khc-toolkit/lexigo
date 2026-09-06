@@ -5,6 +5,7 @@ const grammarTypes = {
   hintWords: "hints words",
   shortVersion: "short version",
   rule: "rule",
+  rules: "rules",
 };
 
 class Grammar {
@@ -50,6 +51,12 @@ class Grammar {
 
   rule(data) {
     this.type = grammarTypes.rule;
+    this.data = data;
+    return this;
+  }
+
+  rules(...data) {
+    this.type = grammarTypes.rules;
     this.data = data;
     return this;
   }
@@ -210,8 +217,31 @@ const GRAMMAR = [
     ],
   },
   {
-    title: "Present Continuous Tense",
-    data: [],
+    title: "Present Continuous",
+    data: [
+      new Grammar().rule("to be(am/is/are) + V + ing"),
+      new Grammar().sentenseExample(
+        [
+          "I am studying English now",
+          "You are studying English now",
+          "He is studying English now",
+          "She is studying English now",
+          "It is studying English now",
+        ],
+        [
+          "We are studying English now",
+          "You are studying English now",
+          "They are studying English now",
+        ],
+      ),
+      new Grammar().rules(
+        "1. Տվյալ պահին ընթացքի մեջ գտնվող գործողություն\nI am learning English at this moment",
+        "2. Տվյալ պահին ավելի մեծ ժամանակ ընդգրկող գործողություն\nShe is reading an interesting book about AI (not now but in a period at time)",
+        "3. Մոտ ապագայում պլանավորված գործողություն(1 տարի)\nI am going to the cinema tomorrow",
+        "4. Always կրկնվող գործողություն որն ավելի հաճախ է կատարվում, քան անհրաժեշտ է, annoying action(զայրացնող գործողություն)\nI am always losing my keys",
+        "5. Փափոխվող գործողություն\nget, grow, become, change, start, begins, increase, decrease, improve, fell, rise\nThe price is ricing",
+      ),
+    ],
   },
 ];
 

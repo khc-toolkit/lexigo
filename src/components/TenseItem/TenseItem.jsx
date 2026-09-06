@@ -94,6 +94,23 @@ export default function TenseItem({ tenseData }) {
       );
     }
 
+    case grammarTypes.rules: {
+      return (
+        <div className={`${classes.root} ${classes.rules}`}>
+          <p className={classes.headerText}>Rules</p>
+          {data.map((line, ind) => (
+            <div key={ind} className={classes.ruleItemsContainer}>
+              {line.split("\n").map((item, ind_2) => (
+                <p className={classes.ruleItem} key={ind_2}>
+                  {item}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
     default: {
       return <p>(undedined type: {type})</p>;
     }
