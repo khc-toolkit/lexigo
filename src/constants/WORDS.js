@@ -8,6 +8,11 @@ class Word {
 }
 
 const WORDS = [
+  new Word(3, "Hurry", "Շտապել", 109),
+  new Word(3, "Wet", "Ոաց", 108),
+  new Word(3, "Waving", "Ձեռքով անել", 107),
+  new Word(3, "Scratching", "Քերձել", 106),
+  new Word(3, "Crossing", "Անցում", 105),
   new Word(3, "Pulled", "Քաշվել", 104),
   new Word(3, "Adjectives", "Ածական", 103),
   new Word(3, "Drew", "Նկարեց", 102),
