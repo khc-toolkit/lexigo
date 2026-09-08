@@ -52,7 +52,6 @@ export default function useQuiz(initWords) {
       if (isValid) {
         progress(currentWordData.id);
       } else {
-        setWords((prev) => [...prev, currentWordData]);
         regress(currentWordData.id);
         setSelectedVariant(ind);
       }
