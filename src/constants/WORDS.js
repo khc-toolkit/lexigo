@@ -8,6 +8,27 @@ class Word {
 }
 
 const WORDS = [
+  new Word(3, "Pulled", "Քաշվել", 104),
+  new Word(3, "Adjectives", "Ածական", 103),
+  new Word(3, "Drew", "Նկարեց", 102),
+  new Word(3, "Also", "Նաև", 101),
+  new Word(3, "Brought", "Բերել", 100),
+  new Word(3, "Trouble", "Խնդիր", 99),
+  new Word(3, "Manage", "Կարողանալ", 98),
+  new Word(3, "Toward", "Դեպի", 97),
+  new Word(3, "Pleasant", "Հաճելի", 96),
+  new Word(3, "Behaving", "Վարվելակերպ", 95),
+  new Word(3, "Ribbon", "Ժապավեն", 94),
+  new Word(3, "Drop", "Կաթիլ", 93),
+  new Word(3, "Around", "Շուրջ", 92),
+  new Word(3, "Certain", "Որոշակի", 91),
+  new Word(3, "Suppose", "Ենթադրել", 90),
+  new Word(3, "Several", "Մի քանի", 89),
+  new Word(3, "Report", "Հաղորդել", 88),
+  new Word(3, "Ever", "Երբև է", 87),
+  new Word(3, "Comprehend", "Հասկանալ", 86),
+  new Word(3, "Among", "Մեջից", 85),
+  new Word(3, "Chart", "Աղյուսակ", 84),
   new Word(2, "Close to", "Մոտիկ", 83),
   new Word(2, "Quarrel", "Վեճ", 82),
   new Word(2, "Overlooked", "Բաց թողում", 81),
@@ -94,21 +115,25 @@ const WORDS = [
   new Word(1, "Cage", "Վանդակ", 0),
 ];
 
-// const repeatedWords = new Set();
-// let id = WORDS[0].id;
+(() => {
+  if (!true) {
+    const repeatedWords = new Set();
+    let id = WORDS[0].id;
 
-// for (let i = 1; i < WORDS.length; ++i) {
-//   // findind dublicates
-//   if (repeatedWords.has(WORDS[i].word)) {
-//     console.log(WORDS[i].word);
-//   }
-//   repeatedWords.add(WORDS[i].word);
+    for (let i = 1; i < WORDS.length; ++i) {
+      // findind dublicates
+      if (repeatedWords.has(WORDS[i].word)) {
+        console.log(WORDS[i].word);
+      }
+      repeatedWords.add(WORDS[i].word);
 
-//   // findind not forward id's
-//   if (Math.abs(id - WORDS[i].id) > 1) {
-//     console.log(id);
-//   }
-//   id = WORDS[i].id;
-// }
+      // findind not forward id's
+      if (Math.abs(id - WORDS[i].id) > 1) {
+        console.log(id);
+      }
+      id = WORDS[i].id;
+    }
+  }
+})();
 
 export default WORDS;
