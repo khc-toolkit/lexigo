@@ -23,11 +23,11 @@ const NAVIGATION = [
     title: "Grammar",
     icon: NotepadText,
   },
-  {
-    to: ROUTES.SETTINGS,
-    title: "Settings",
-    icon: Settings,
-  },
+  // {
+  //   to: ROUTES.SETTINGS,
+  //   title: "Settings",
+  //   icon: Settings,
+  // },
 ];
 
 export default NAVIGATION;
