@@ -1,6 +1,6 @@
 // libs
 import { NotepadText } from "lucide-react";
-import { Settings } from "lucide-react";
+// import { Settings } from "lucide-react";
 import { ListTodo } from "lucide-react";
 import { WholeWord } from "lucide-react";
 
