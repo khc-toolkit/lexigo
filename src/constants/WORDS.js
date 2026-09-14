@@ -39,7 +39,7 @@ const WORDS = [
   new Word(3, "Expecting", "Սպասելով / ակնկալելով", 111),
   new Word(3, "Abroad", "Արտասահմանում", 110),
   new Word(3, "Hurry", "Շտապել", 109),
-  new Word(3, "Wet", "Ոաց", 108),
+  new Word(3, "Wet", "Թաց", 108),
   new Word(3, "Waving", "Ձեռքով անել", 107),
   new Word(3, "Scratching", "Քերձել", 106),
   new Word(3, "Crossing", "Անցում", 105),
